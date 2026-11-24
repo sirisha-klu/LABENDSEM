@@ -21,6 +21,14 @@ function Products() {
 function Cart() {
   return <h2>Your Shopping Cart</h2>;
 }
+function Products() {
+  const [cart, setCart] = useState([]);
+  const products = [{name:"Mobile",price:20000},{name:"Laptop",price:50000}];
+
+  return products.map(p => <div>{p.name} - ₹{p.price}
+    <button onClick={() => setCart([...cart,p])}>Add to Cart</button>
+  </div>);
+}
 
 function App() {
   return (
